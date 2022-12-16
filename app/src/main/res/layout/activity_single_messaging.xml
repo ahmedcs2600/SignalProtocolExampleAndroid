@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    tools:context=".ui.single.SingleMessaging">
+
+    <RelativeLayout
+        android:id="@+id/aliceView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/aliceHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginBottom="12dp"
+            android:text="Alice" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/aliceMessagingView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/layout_message_item"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_above="@id/aliceBottomView"
+            android:layout_below="@id/aliceHeader" />
+
+        <LinearLayout
+            android:id="@+id/aliceBottomView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/aliceMessageBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/aliceSendButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bobView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/bobHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginBottom="12dp"
+            android:text="Bob" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/bobMessagingView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/layout_message_item"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_above="@id/bobBottomView"
+            android:layout_below="@id/bobHeader" />
+
+        <LinearLayout
+            android:id="@+id/bobBottomView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/bobMessageBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/bobSendButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
